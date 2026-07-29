@@ -1,34 +1,3 @@
-  /* ==================== Resultado final ==================== */
-  .outcome-card {
-    width: 100%;
-    margin-top: 48px;
-    padding: 30px 34px;
-    display: block;
-    border: 1px solid var(--line);
-    background: var(--paper);
-  }
-  .outcome-content {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-  .outcome-kicker {
-    display: inline-block;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--soft);
-  }
-  .outcome-copy {
-    font-family: var(--serif);
-    font-size: clamp(16px, 1.8vw, 19px);
-    line-height: 1.4;
-    letter-spacing: -0.012em;
-    color: var(--ink);
-    max-width: 38ch;
-  }
-
   .prose + .hero-info-block { margin-top: 44px; }
 
   /* ==================== Miguel Castro ==================== */
@@ -52,7 +21,10 @@
     margin-bottom: 22px;
   }
 
-  /* ==================== Programa ==================== */
+  /* ==================== Cómo funciona ==================== */
+  .how-it-works .arc-grid { margin-bottom: 40px; }
+  .how-it-works .prose { margin-bottom: 48px; }
+
   .data-grid {
     width: 100%;
     display: grid;
@@ -74,7 +46,6 @@
   }
   .data-value { font-size: 15px; color: var(--ink); font-weight: 500; }
 
-  /* ==================== Experiencia ==================== */
   .arc-grid {
     width: 100%;
     display: grid;
@@ -95,4 +66,3 @@
   .arc-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.25; stroke-linecap: round; stroke-linejoin: round; }
   .arc-number { font-size: 11px; color: var(--soft); letter-spacing: 0.06em; display: block; }
   .arc-title { font-family: var(--serif); font-weight: 400; font-size: 15px; color: var(--ink); }
-

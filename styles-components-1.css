@@ -18,7 +18,11 @@
   .cta-link.muted { color: var(--muted); }
   .cta-link.muted:hover { color: var(--ink); }
 
-  a.hotmart-fb.hotmart__button-checkout.cta-button-gold {
+  a.hotmart-fb.hotmart__button-checkout.cta-button-gold,
+  a.hotmart-fb.hotmart__button-checkout.cta-button-gold:hover,
+  a.hotmart-fb.hotmart__button-checkout.cta-button-gold:focus,
+  a.hotmart-fb.hotmart__button-checkout.cta-button-gold:focus-visible,
+  a.hotmart-fb.hotmart__button-checkout.cta-button-gold:active {
     appearance: none !important;
     -webkit-appearance: none !important;
     font-family: inherit !important;
@@ -36,6 +40,7 @@
     color: #1a1200 !important;
     text-decoration: none !important;
     text-align: center !important;
+    text-shadow: none !important;
     font-size: 11px !important;
     line-height: 1.2 !important;
     font-weight: 600 !important;
@@ -45,18 +50,19 @@
     border: 1px solid var(--gold) !important;
     border-radius: 0 !important;
     box-shadow: none !important;
+    filter: none !important;
+    transform: none !important;
     opacity: 1 !important;
-    transition: transform var(--motion-fast) var(--motion-ease) !important;
+    transition: none !important;
   }
   a.hotmart-fb.hotmart__button-checkout.cta-button-gold::before,
   a.hotmart-fb.hotmart__button-checkout.cta-button-gold::after {
     content: none !important;
     display: none !important;
+    box-shadow: none !important;
   }
   a.hotmart-fb.hotmart__button-checkout.cta-button-gold .arrow { transition: transform var(--motion-fast) var(--motion-ease); }
-  a.hotmart-fb.hotmart__button-checkout.cta-button-gold:hover { transform: translateY(-2px); }
   a.hotmart-fb.hotmart__button-checkout.cta-button-gold:hover .arrow { transform: translateX(3px); }
-  a.hotmart-fb.hotmart__button-checkout.cta-button-gold:active { transform: translateY(0); }
 
   /* ==================== Qué habilidades desarrollas: 2-col grid con divisores ==================== */
   .skill-grid {
@@ -98,4 +104,3 @@
     max-width: 32ch;
   }
   .skill-context strong { color: var(--ink); font-style: normal; font-weight: 500; }
-

@@ -99,8 +99,6 @@
   .skill-context {
     font-size: 12px;
     color: var(--muted);
-    font-style: italic;
     line-height: 1.65;
-    max-width: 32ch;
+    max-width: 38ch;
   }
-  .skill-context strong { color: var(--ink); font-style: normal; font-weight: 500; }

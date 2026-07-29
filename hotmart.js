@@ -25,6 +25,19 @@ function importPlausible() {
   plausible.init();
 }
 
+function insertAnnouncementBar() {
+  if (document.querySelector('.announcement-bar')) return;
+
+  var header = document.querySelector('.site-header');
+  if (!header) return;
+
+  var bar = document.createElement('aside');
+  bar.className = 'announcement-bar';
+  bar.setAttribute('aria-label', 'Anuncio de primera edición');
+  bar.innerHTML = '<p><span><strong>Primera edición</strong> · Precio especial <strong>S/280 / US$83</strong> <span class="announcement-regular">(regular S/520 / US$172)</span></span><a href="postulacion-beca.html">4 becas del 50% disponibles <span aria-hidden="true">→</span></a></p>';
+  header.parentNode.insertBefore(bar, header);
+}
+
 function importHotmart() {
   var link = document.createElement('link');
   link.rel = 'stylesheet';
@@ -64,11 +77,16 @@ function importHotmart() {
   document.head.appendChild(imported);
 }
 
+function startSite() {
+  insertAnnouncementBar();
+  importHotmart();
+}
+
 importSiteIcon();
 importPlausible();
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', importHotmart, { once: true });
+  document.addEventListener('DOMContentLoaded', startSite, { once: true });
 } else {
-  importHotmart();
+  startSite();
 }

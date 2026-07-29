@@ -42,14 +42,14 @@
   .announcement-bar {
     position: relative;
     isolation: isolate;
-    color: #1a1200;
+    color: var(--paper);
   }
   .announcement-bar::before {
     content: "";
     position: absolute;
     inset: 0 auto 0 50%;
     width: 100vw;
-    background: var(--gold);
+    background: var(--ink);
     transform: translateX(-50%);
     z-index: -1;
   }
@@ -65,9 +65,9 @@
     text-align: center;
   }
   .announcement-bar strong { font-weight: 650; }
-  .announcement-bar .announcement-regular { opacity: 0.7; }
+  .announcement-bar .announcement-regular { opacity: 0.65; }
   .announcement-bar a {
-    color: inherit;
+    color: var(--gold);
     font-weight: 600;
     text-decoration: none;
     white-space: nowrap;

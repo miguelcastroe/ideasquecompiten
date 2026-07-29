@@ -38,6 +38,14 @@ function insertAnnouncementBar() {
   header.parentNode.insertBefore(bar, header);
 }
 
+function configureCheckoutLinks() {
+  var checkoutUrl = 'https://pay.hotmart.com/L106815370Q?checkoutMode=2';
+  ['payment_button_top', 'payment_button_bottom'].forEach(function (id) {
+    var link = document.getElementById(id);
+    if (link) link.href = checkoutUrl;
+  });
+}
+
 function importHotmart() {
   var link = document.createElement('link');
   link.rel = 'stylesheet';
@@ -79,6 +87,7 @@ function importHotmart() {
 
 function startSite() {
   insertAnnouncementBar();
+  configureCheckoutLinks();
   importHotmart();
 }
 

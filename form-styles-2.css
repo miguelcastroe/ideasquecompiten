@@ -1,0 +1,115 @@
+  .form-section {
+    padding: 0 0 58px;
+    margin-bottom: 58px;
+    border-bottom: 1px solid var(--line);
+  }
+  .form-section:last-of-type { margin-bottom: 40px; }
+  .form-section-title {
+    margin-bottom: 28px;
+    font-family: var(--serif);
+    font-size: 22px;
+    font-weight: 400;
+    letter-spacing: -0.012em;
+  }
+  .required-note {
+    margin-top: -18px;
+    margin-bottom: 30px;
+    color: var(--muted);
+    font-size: 11px;
+  }
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px 28px;
+  }
+  .field { min-width: 0; }
+  .field.full { grid-column: 1 / -1; }
+  .field label,
+  .field-label {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--ink);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+  }
+  .field-hint {
+    display: block;
+    margin: -3px 0 10px;
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+  }
+  .required { color: var(--soft); }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  select,
+  textarea {
+    width: 100%;
+    border: 1px solid var(--line-strong);
+    border-radius: 0;
+    background: var(--paper);
+    color: var(--ink);
+    outline: none;
+    transition: border-color var(--motion-fast) var(--motion-ease), background var(--motion-fast) var(--motion-ease);
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="url"],
+  select { min-height: 48px; padding: 0 14px; }
+  textarea { min-height: 152px; padding: 13px 14px; line-height: 1.65; resize: vertical; }
+  input::placeholder, textarea::placeholder { color: #9a9a9a; opacity: 1; }
+  input:hover, select:hover, textarea:hover { border-color: #bdbdbd; }
+  input:focus, select:focus, textarea:focus {
+    border-color: #a8a8a8;
+    background: #fff;
+    box-shadow: 0 0 0 2px #f3f3f3;
+  }
+  select {
+    appearance: none;
+    background-image:
+      linear-gradient(45deg, transparent 50%, var(--muted) 50%),
+      linear-gradient(135deg, var(--muted) 50%, transparent 50%);
+    background-position:
+      calc(100% - 17px) 21px,
+      calc(100% - 12px) 21px;
+    background-size: 5px 5px, 5px 5px;
+    background-repeat: no-repeat;
+    padding-right: 38px;
+  }
+  .field-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 6px;
+    color: var(--muted);
+    font-size: 10px;
+  }
+
+  .check-list { display: flex; flex-direction: column; gap: 13px; }
+  .check-row {
+    display: grid;
+    grid-template-columns: 15px minmax(0, 1fr);
+    gap: 9px;
+    align-items: start;
+    cursor: pointer;
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  .check-row input {
+    width: 14px;
+    height: 14px;
+    margin-top: 2px;
+    accent-color: var(--ink);
+  }
+  .privacy-note {
+    margin-top: 16px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.5;
+  }

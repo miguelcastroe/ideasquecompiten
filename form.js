@@ -24,6 +24,15 @@
   };
   plausible.init();
 
+  const header = document.querySelector('.site-header');
+  if (header && !document.querySelector('.announcement-bar')) {
+    const bar = document.createElement('aside');
+    bar.className = 'announcement-bar';
+    bar.setAttribute('aria-label', 'Anuncio de primera edición');
+    bar.innerHTML = '<p><span><strong>Primera edición</strong> · Precio especial <strong>S/280 / US$83</strong> <span class="announcement-regular">(regular S/520 / US$172)</span></span><a href="#scholarshipForm">4 becas del 50% disponibles <span aria-hidden="true">→</span></a></p>';
+    header.parentNode.insertBefore(bar, header);
+  }
+
   const form = document.getElementById('scholarshipForm');
   const submitButton = document.getElementById('submitButton');
   const buttonLabel = submitButton.querySelector('.button-label');

@@ -1,0 +1,119 @@
+:root {
+    --serif: "PP Editorial New", "Iowan Old Style", Georgia, serif;
+    --ink: #111;
+    --muted: #6f6f6f;
+    --soft: #767676;
+    --line: #e8e8e8;
+    --line-strong: #d8d8d8;
+    --paper: #fff;
+    --subtle: #fafafa;
+    --gold: #e8a020;
+    --error: #9b2c2c;
+    --success: #245f38;
+    --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --motion-fast: 180ms;
+    --content-width: 960px;
+    --page-gutter: 40px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--ink); color: var(--paper); }
+  a { color: inherit; }
+  button, input, select, textarea { font: inherit; }
+
+  .shell {
+    width: 100%;
+    max-width: calc(var(--content-width) + (var(--page-gutter) * 2));
+    margin: 0 auto;
+    padding: 0 var(--page-gutter);
+  }
+
+  .site-header {
+    min-height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+  .site-header::after,
+  .site-footer::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    width: 100vw;
+    height: 1px;
+    background: var(--line);
+    transform: translateX(-50%);
+  }
+  .site-header::after { bottom: 0; }
+  .site-header .logo {
+    font-family: var(--serif);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    text-decoration: none;
+  }
+  .back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: color var(--motion-fast) var(--motion-ease), gap var(--motion-fast) var(--motion-ease);
+  }
+  .back-link:hover { color: var(--ink); gap: 11px; }
+
+  main {
+    width: 100%;
+    max-width: 760px;
+    margin: 0 auto;
+    padding: clamp(76px, 10vw, 112px) 0 104px;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    margin-bottom: 20px;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .eyebrow::before {
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+  h1 {
+    max-width: 13ch;
+    margin-bottom: 24px;
+    font-family: var(--serif);
+    font-size: clamp(36px, 6vw, 52px);
+    font-weight: 400;
+    letter-spacing: -0.028em;
+    line-height: 1.08;
+  }
+  .intro {
+    max-width: 58ch;
+    margin-bottom: 44px;
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .application-form { width: 100%; }

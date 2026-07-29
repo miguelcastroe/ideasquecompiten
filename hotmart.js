@@ -1,3 +1,13 @@
+function importSiteIcon() {
+  if (document.querySelector('link[rel="icon"]')) return;
+
+  var favicon = document.createElement('link');
+  favicon.rel = 'icon';
+  favicon.type = 'image/svg+xml';
+  favicon.href = 'favicon.svg';
+  document.head.appendChild(favicon);
+}
+
 function importPlausible() {
   if (!document.querySelector('script[src="https://plausible.io/js/pa-TMhx3FA17KuWE18ExmuQ0.js"]')) {
     var analytics = document.createElement('script');
@@ -54,6 +64,7 @@ function importHotmart() {
   document.head.appendChild(imported);
 }
 
+importSiteIcon();
 importPlausible();
 
 if (document.readyState === 'loading') {

@@ -1,0 +1,60 @@
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+
+  /* ==================== Mobile ==================== */
+  @media (max-width: 760px) {
+    :root { --page-gutter: 24px; }
+    .site-header {
+      height: 64px;
+      max-height: 64px;
+      padding: 0;
+      gap: 16px;
+      align-items: center;
+    }
+    .site-header nav { justify-content: flex-end; flex-wrap: nowrap; gap: 16px; }
+    .brand-name { font-size: 14px; }
+    .audience-roles { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .hero-info-block { padding: 24px; }
+  }
+
+  @media (max-width: 520px) {
+    .site-header nav a:not(:last-child) { display: none; }
+    .site-header nav { gap: 0; }
+  }
+
+  @media (max-width: 600px) {
+    :root { --page-gutter: 20px; --section-y: 76px; }
+    .page-hero { padding-top: 76px; padding-bottom: 60px; }
+    .hero-line-primary { font-size: clamp(32px, 10vw, 42px); }
+    .hero-line-primary .line,
+    .hero-tagline .line,
+    .hero-line-secondary .line { display: inline; }
+    .hero-line-primary .line + .line::before,
+    .hero-tagline .line + .line::before,
+    .hero-line-secondary .line + .line::before { content: " "; }
+    .audience-roles { grid-template-columns: 1fr; }
+    .meta-bar { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+    .meta-divider { display: none; }
+    .data-grid { grid-template-columns: 1fr; }
+    .skill-grid { grid-template-columns: 1fr; }
+    .skill-item:nth-child(odd) { border-right: none; }
+    .skill-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .skill-item:last-child { border-bottom: none; }
+    .skill-item { padding: 28px 0; }
+    .profile-avatar { width: 56px; height: 56px; margin-bottom: 18px; }
+    .outcome-card { padding: 22px; }
+    .outcome-content { gap: 6px; }
+    .outcome-copy { max-width: none; }
+    .arc-grid { grid-template-columns: 1fr; gap: var(--space-3); }
+    .arc-item { padding: var(--space-3) 0 0; border-left: none !important; }
+    .arc-item:first-child { padding-top: 0; }
+    .arc-item:not(:first-child) { border-top: 1px solid var(--line); }
+    .site-header nav { gap: 8px 14px; }
+  }

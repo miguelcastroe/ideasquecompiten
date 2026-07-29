@@ -1,6 +1,21 @@
 (() => {
   'use strict';
 
+  if (!document.querySelector('script[src="https://plausible.io/js/pa-TMhx3FA17KuWE18ExmuQ0.js"]')) {
+    const analytics = document.createElement('script');
+    analytics.async = true;
+    analytics.src = 'https://plausible.io/js/pa-TMhx3FA17KuWE18ExmuQ0.js';
+    document.head.appendChild(analytics);
+  }
+
+  window.plausible = window.plausible || function () {
+    (plausible.q = plausible.q || []).push(arguments);
+  };
+  plausible.init = plausible.init || function (options) {
+    plausible.o = options || {};
+  };
+  plausible.init();
+
   const form = document.getElementById('scholarshipForm');
   const submitButton = document.getElementById('submitButton');
   const buttonLabel = submitButton.querySelector('.button-label');

@@ -1,0 +1,98 @@
+  /* ==================== Resultado final ==================== */
+  .outcome-card {
+    width: 100%;
+    margin-top: 48px;
+    padding: 30px 34px;
+    display: block;
+    border: 1px solid var(--line);
+    background: var(--paper);
+  }
+  .outcome-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  .outcome-kicker {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--soft);
+  }
+  .outcome-copy {
+    font-family: var(--serif);
+    font-size: clamp(16px, 1.8vw, 19px);
+    line-height: 1.4;
+    letter-spacing: -0.012em;
+    color: var(--ink);
+    max-width: 38ch;
+  }
+
+  .prose + .hero-info-block { margin-top: 44px; }
+
+  /* ==================== Miguel Castro ==================== */
+  .profile-avatar {
+    width: 64px;
+    height: 64px;
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 50%;
+    border: 1px solid var(--line);
+    object-fit: cover;
+    object-position: 50% 18%;
+    background: #fafafa;
+  }
+  .authority-line {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--ink);
+    line-height: 1.75;
+    max-width: 56ch;
+    margin-bottom: 22px;
+  }
+
+  /* ==================== Programa ==================== */
+  .data-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 34px 28px;
+  }
+  .data-item {
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+    transition: border-color var(--motion-fast) var(--motion-ease);
+  }
+  .data-item:hover { border-color: var(--soft); }
+  .data-label {
+    font-size: 11px;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .data-value { font-size: 15px; color: var(--ink); font-weight: 500; }
+
+  /* ==================== Experiencia ==================== */
+  .arc-grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-bottom: 40px;
+  }
+  .arc-item {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 4px 24px;
+    transition: transform var(--motion-fast) var(--motion-ease);
+  }
+  .arc-item:first-child { padding-left: 0; }
+  .arc-item:not(:first-child) { border-left: 1px solid var(--line); }
+  .arc-item:hover { transform: translateY(-2px); }
+  .arc-icon { width: 24px; height: 24px; color: var(--ink); }
+  .arc-icon svg { width: 100%; height: 100%; stroke: currentColor; fill: none; stroke-width: 1.25; stroke-linecap: round; stroke-linejoin: round; }
+  .arc-number { font-size: 11px; color: var(--soft); letter-spacing: 0.06em; display: block; }
+  .arc-title { font-family: var(--serif); font-weight: 400; font-size: 15px; color: var(--ink); }
+

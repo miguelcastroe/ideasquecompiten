@@ -1,3 +1,20 @@
+function importPlausible() {
+  if (!document.querySelector('script[src="https://plausible.io/js/pa-TMhx3FA17KuWE18ExmuQ0.js"]')) {
+    var analytics = document.createElement('script');
+    analytics.async = true;
+    analytics.src = 'https://plausible.io/js/pa-TMhx3FA17KuWE18ExmuQ0.js';
+    document.head.appendChild(analytics);
+  }
+
+  window.plausible = window.plausible || function () {
+    (plausible.q = plausible.q || []).push(arguments);
+  };
+  plausible.init = plausible.init || function (options) {
+    plausible.o = options || {};
+  };
+  plausible.init();
+}
+
 function importHotmart() {
   var link = document.createElement('link');
   link.rel = 'stylesheet';
@@ -36,6 +53,8 @@ function importHotmart() {
   };
   document.head.appendChild(imported);
 }
+
+importPlausible();
 
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', importHotmart, { once: true });

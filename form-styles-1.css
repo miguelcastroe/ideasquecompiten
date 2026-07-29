@@ -14,6 +14,7 @@
     --motion-fast: 180ms;
     --content-width: 960px;
     --page-gutter: 40px;
+    --space-4: 32px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -33,13 +34,14 @@
 
   .shell {
     width: 100%;
-    max-width: calc(var(--content-width) + (var(--page-gutter) * 2));
+    max-width: calc(var(--content-width) + 80px);
     margin: 0 auto;
     padding: 0 var(--page-gutter);
   }
 
   .site-header {
-    min-height: 56px;
+    height: 64px;
+    max-height: 64px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -57,25 +59,50 @@
   }
   .site-header::after { bottom: 0; }
   .site-header .logo {
-    font-family: var(--serif);
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    text-decoration: none;
-  }
-  .back-link {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 12px;
+    min-width: 0;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .brand-mark {
+    width: 15px;
+    height: 29px;
+    flex: 0 0 auto;
+    color: var(--ink);
+  }
+  .brand-mark svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .brand-mark path { fill: currentColor; }
+  .brand-divider {
+    width: 1px;
+    height: 22px;
+    flex: 0 0 auto;
+    background: var(--line);
+  }
+  .brand-name {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: -0.012em;
+    white-space: nowrap;
+  }
+  .site-header nav { display: flex; gap: var(--space-4); }
+  .site-header nav a {
     color: var(--muted);
     font-size: 11px;
     font-weight: 500;
     letter-spacing: 0.06em;
     text-decoration: none;
     text-transform: uppercase;
-    transition: color var(--motion-fast) var(--motion-ease), gap var(--motion-fast) var(--motion-ease);
+    transition: color var(--motion-fast) var(--motion-ease);
   }
-  .back-link:hover { color: var(--ink); gap: 11px; }
+  .site-header nav a:hover { color: var(--ink); }
 
   main {
     width: 100%;
@@ -101,7 +128,7 @@
     background: var(--gold);
   }
   h1 {
-    max-width: 13ch;
+    max-width: 16ch;
     margin-bottom: 24px;
     font-family: var(--serif);
     font-size: clamp(36px, 6vw, 52px);

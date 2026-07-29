@@ -25,6 +25,15 @@ function importPlausible() {
   plausible.init();
 }
 
+function importAwardsStyles() {
+  if (document.querySelector('link[href="styles-components-awards.css"]')) return;
+
+  var stylesheet = document.createElement('link');
+  stylesheet.rel = 'stylesheet';
+  stylesheet.href = 'styles-components-awards.css';
+  document.head.appendChild(stylesheet);
+}
+
 function insertAnnouncementBar() {
   if (document.querySelector('.announcement-bar')) return;
 
@@ -36,6 +45,45 @@ function insertAnnouncementBar() {
   bar.setAttribute('aria-label', 'Anuncio de primera edición');
   bar.innerHTML = '<p><span><strong>Primera edición</strong> · Precio especial <strong>S/280 / US$83</strong> <span class="announcement-regular">(regular S/520 / US$172)</span></span><a href="postulacion-beca.html">4 becas del 50% disponibles <span aria-hidden="true">→</span></a></p>';
   header.parentNode.insertBefore(bar, header);
+}
+
+function insertAwardsCarousel() {
+  if (document.querySelector('.profile-awards')) return;
+
+  var profile = document.getElementById('miguel');
+  var profileCopy = profile && profile.querySelector('.prose');
+  if (!profileCopy) return;
+
+  var assetBase = 'https://raw.githubusercontent.com/miguelcastroe/workshop/main/';
+  var awards = [
+    { file: 'awards_clio.svg', name: 'CLIO', className: 'profile-award-clio' },
+    { file: 'awards_cannes.svg', name: 'Cannes Lions', className: 'profile-award-cannes' },
+    { file: 'awards_oneshow.svg', name: 'The One Show', className: 'profile-award-oneshow' },
+    { file: 'awards_ojo.svg', name: 'El Ojo de Iberoamérica', className: 'profile-award-ojo' },
+    { file: 'awards_newyork.svg', name: 'New York Festivals', className: 'profile-award-newyork' },
+    { file: 'awards_lia.svg', name: 'LIA', className: 'profile-award-lia' },
+    { file: 'awards_dad.svg', name: 'D&AD', className: 'profile-award-dad' }
+  ];
+
+  function renderGroup(hidden) {
+    var images = awards.map(function (award) {
+      var alt = hidden ? '' : award.name;
+      return '<img class="profile-award-logo ' + award.className + '" src="' + assetBase + award.file + '" alt="' + alt + '" loading="lazy" decoding="async">';
+    }).join('');
+
+    return '<div class="profile-awards-group"' + (hidden ? ' aria-hidden="true"' : '') + '>' + images + '</div>';
+  }
+
+  var carousel = document.createElement('div');
+  carousel.className = 'profile-awards';
+  carousel.setAttribute('aria-label', 'Premios y reconocimientos');
+  carousel.innerHTML =
+    '<p class="profile-awards-label">Premios y reconocimientos</p>' +
+    '<div class="profile-awards-marquee">' +
+      '<div class="profile-awards-track">' + renderGroup(false) + renderGroup(true) + '</div>' +
+    '</div>';
+
+  profileCopy.insertAdjacentElement('afterend', carousel);
 }
 
 function configureCheckoutLinks() {
@@ -86,7 +134,9 @@ function importHotmart() {
 }
 
 function startSite() {
+  importAwardsStyles();
   insertAnnouncementBar();
+  insertAwardsCarousel();
   configureCheckoutLinks();
   importHotmart();
 }

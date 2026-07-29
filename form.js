@@ -1,6 +1,14 @@
 (() => {
   'use strict';
 
+  if (!document.querySelector('link[rel="icon"]')) {
+    const favicon = document.createElement('link');
+    favicon.rel = 'icon';
+    favicon.type = 'image/svg+xml';
+    favicon.href = 'favicon.svg';
+    document.head.appendChild(favicon);
+  }
+
   if (!document.querySelector('script[src="https://plausible.io/js/pa-TMhx3FA17KuWE18ExmuQ0.js"]')) {
     const analytics = document.createElement('script');
     analytics.async = true;

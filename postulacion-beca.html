@@ -1,37 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Formulario de postulación a una beca del 50% para el laboratorio Ideas que compiten.">
-<title>Postular a una beca del 50% — Ideas que compiten</title>
-<link rel="stylesheet" href="form-styles.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Formulario de postulación a una de las 4 becas del 50% para el sprint de desarrollo de ideas.">
+  <title>Postula a una beca del 50% | Sprint de desarrollo de ideas</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="landing.css?v=20260804-5">
+  <link rel="stylesheet" href="form-landing.css?v=20260804">
 </head>
 <body>
-  <div class="shell">
-    <header class="site-header">
-      <a href="index.html" class="logo" aria-label="Ideas que compiten — volver al inicio">
-        <span class="brand-mark" aria-hidden="true">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 85.04 164.63" focusable="false">
-            <path d="M78.56,42.52h-31.18c-1.29,0-2.52-.51-3.43-1.42h0c-.91-.91-1.42-2.15-1.42-3.43V6.48c0-3.58-2.9-6.48-6.48-6.48H6.48C2.9,0,0,2.9,0,6.48v29.56c0,3.58,2.9,6.48,6.48,6.48h31.18c1.29,0,2.52.51,3.43,1.42h0c.91.91,1.42,2.15,1.42,3.43v110.77c0,3.58,2.9,6.48,6.48,6.48h29.56c3.58,0,6.48-2.9,6.48-6.48V49c0-3.58-2.9-6.48-6.48-6.48Z"/>
-          </svg>
-        </span>
-        <span class="brand-divider" aria-hidden="true"></span>
-        <span class="brand-name">Ideas que compiten</span>
+  <header class="site-chrome">
+    <div class="announcement-bar brochure-bar">
+      <a href="brochure.html" target="_blank" rel="noopener">
+        <span>Descarga la guía del sprint</span>
+        <span aria-hidden="true">↓</span>
       </a>
-      <nav aria-label="Navegación principal">
-        <a href="index.html#habilidades">Habilidades</a>
-        <a href="index.html#como-funciona">Cómo funciona</a>
-        <a href="index.html#participar">Participar</a>
-      </nav>
-    </header>
+    </div>
 
-    <main>
-      <span class="eyebrow">Ideas que compiten</span>
-      <h1>Postular a una beca del 50%</h1>
-      <p class="intro">Cuéntame qué estás construyendo y por qué esta beca haría posible que participes en el laboratorio.</p>
+    <div class="site-header">
+      <a class="site-identity" href="index.html" aria-label="Volver al landing">
+        <span class="identity-product">Sprint de desarrollo de ideas</span>
+        <span class="identity-divider" aria-hidden="true"></span>
+        <span class="identity-name">Miguel Castro</span>
+      </a>
 
-      <!-- FormSubmit requiere una activación única del correo receptor después del primer envío de prueba. -->
+      <button class="menu-toggle" type="button" aria-label="Abrir navegación" aria-expanded="false" aria-controls="site-menu">
+        <span class="menu-label">Menú</span>
+        <span class="hamburger" aria-hidden="true">
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+
+    <nav class="site-menu" id="site-menu" aria-label="Navegación interna" aria-hidden="true">
+      <div class="menu-inner">
+        <p class="menu-kicker">Navegación</p>
+        <a href="index.html#metodo"><span>01</span>El método</a>
+        <a href="index.html#resultado"><span>02</span>Qué te llevas</a>
+        <a href="index.html#miguel"><span>03</span>Miguel Castro</a>
+        <a href="index.html#informacion"><span>04</span>Información práctica</a>
+        <div class="menu-actions">
+          <a class="menu-primary" href="index.html#informacion">Reserva tu plaza</a>
+          <a href="#scholarshipForm">Postula a la beca</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="form-page">
+    <section class="form-hero section-grid">
+      <p class="eyebrow">4 becas del 50%</p>
+      <h1>Postula a la beca</h1>
+      <p class="form-intro">Cuéntame qué estás construyendo y cómo esta beca haría posible que participes en el sprint.</p>
+    </section>
+
+    <section class="form-shell">
       <form
         id="scholarshipForm"
         class="application-form"
@@ -39,20 +64,25 @@
         method="POST"
         novalidate
       >
-        <input type="hidden" name="_subject" value="Nueva postulación — Beca Ideas que compiten">
+        <input type="hidden" name="_subject" value="Nueva postulación | Beca sprint de desarrollo de ideas">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="Origen" value="Formulario de beca — Ideas que compiten">
+        <input type="hidden" name="Origen" value="Formulario de beca | Sprint de desarrollo de ideas">
         <input type="hidden" id="submittedAt" name="Fecha de envío" value="">
         <input type="hidden" id="formUrl" name="_url" value="">
+
         <div class="honeypot" aria-hidden="true">
           <label for="website">Deja este campo vacío</label>
           <input id="website" type="text" name="_honey" tabindex="-1" autocomplete="off">
         </div>
 
         <section class="form-section" aria-labelledby="about-title">
-          <h2 id="about-title" class="form-section-title">Sobre ti</h2>
-          <p class="required-note">Los campos marcados con * son obligatorios.</p>
+          <div class="form-section-heading">
+            <span>01</span>
+            <h2 id="about-title">Sobre ti</h2>
+          </div>
+          <p class="required-note">Campos marcados con * son obligatorios</p>
+
           <div class="form-grid">
             <div class="field">
               <label for="fullName">Nombre y apellidos <span class="required" aria-hidden="true">*</span></label>
@@ -78,18 +108,22 @@
             </div>
             <div class="field full">
               <label for="portfolio">Portafolio, LinkedIn o sitio</label>
-              <span class="field-hint">Opcional. Puedes pegar una URL.</span>
+              <span class="field-hint">Opcional. Puedes pegar una URL</span>
               <input id="portfolio" name="Portafolio o LinkedIn" type="url" inputmode="url" autocomplete="url" placeholder="https://" maxlength="300">
             </div>
           </div>
         </section>
 
         <section class="form-section" aria-labelledby="application-title">
-          <h2 id="application-title" class="form-section-title">Tu postulación</h2>
+          <div class="form-section-heading">
+            <span>02</span>
+            <h2 id="application-title">Tu postulación</h2>
+          </div>
+
           <div class="form-grid">
             <div class="field full">
               <label for="application">¿Qué proyecto traerías y por qué postulas a la beca? <span class="required" aria-hidden="true">*</span></label>
-              <span class="field-hint">Describe brevemente el proyecto, en qué punto está y cómo la beca haría posible que participes ahora.</span>
+              <span class="field-hint">Describe brevemente el proyecto, en qué punto está y cómo la beca haría posible que participes ahora</span>
               <textarea id="application" name="Proyecto y motivo de la postulación" required minlength="100" maxlength="1000" data-counter="applicationCount"></textarea>
               <div class="field-footer"><span id="applicationCount">0 / 1000</span></div>
             </div>
@@ -97,24 +131,29 @@
         </section>
 
         <section class="form-section" aria-labelledby="confirm-title">
-          <h2 id="confirm-title" class="form-section-title">Confirmación</h2>
+          <div class="form-section-heading">
+            <span>03</span>
+            <h2 id="confirm-title">Confirmación</h2>
+          </div>
+
           <div class="check-list">
             <label class="check-row" for="attendance">
               <input id="attendance" name="Confirma asistencia" type="checkbox" value="Sí" required>
-              <span>Puedo asistir a las 4 sesiones online, los miércoles del 26 de agosto al 16 de septiembre, de 8pm a 10pm (GMT-5). <span class="required" aria-hidden="true">*</span></span>
+              <span>Puedo asistir a las 4 sesiones online, los martes 01, 08, 15 y 22 de septiembre, de 8:00 p. m. a 10:00 p. m. (GMT-5) <span class="required" aria-hidden="true">*</span></span>
             </label>
             <label class="check-row" for="privacy">
               <input id="privacy" name="Acepta uso de datos" type="checkbox" value="Sí" required>
-              <span>Acepto que mis respuestas se utilicen para evaluar esta postulación y contactarme sobre el resultado. <span class="required" aria-hidden="true">*</span></span>
+              <span>Acepto que mis respuestas se utilicen para evaluar esta postulación y contactarme sobre el resultado <span class="required" aria-hidden="true">*</span></span>
             </label>
           </div>
+
           <p class="privacy-note">La información no se utilizará para otros fines ni se compartirá con terceros.</p>
         </section>
 
         <div class="form-actions">
           <button id="submitButton" class="submit-button" type="submit">
             <span class="button-label">Enviar postulación</span>
-            <span class="submit-arrow" aria-hidden="true">→</span>
+            <span class="submit-arrow" aria-hidden="true">↗</span>
           </button>
           <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
         </div>
@@ -124,19 +163,21 @@
         <span class="success-kicker">Postulación enviada</span>
         <h2 class="success-title">Gracias por postular.</h2>
         <p class="success-copy">Recibí tus respuestas. Me pondré en contacto contigo por correo cuando termine la revisión de las postulaciones.</p>
-        <a class="success-back" href="index.html">Volver al laboratorio →</a>
+        <a class="success-back" href="index.html">Volver al sprint ↗</a>
       </section>
-    </main>
+    </section>
+  </main>
 
-    <footer class="site-footer">
-      <span>© 2026 Miguel Castro</span>
-      <div class="footer-links">
-        <a href="https://global.miguelcastro.works/">Portafolio ↗</a>
-        <a href="https://www.linkedin.com/in/miguelcastroe/">LinkedIn ↗</a>
-      </div>
-    </footer>
-  </div>
+  <footer class="site-footer">
+    <span>© 2026 Miguel Castro</span>
+    <div class="footer-links">
+      <a href="https://global.miguelcastro.works/">Portafolio ↗</a>
+      <a href="https://www.linkedin.com/in/miguelcastroe/">LinkedIn ↗</a>
+      <a href="brochure.html" target="_blank" rel="noopener">Descarga la guía del sprint ↓</a>
+    </div>
+  </footer>
+
+  <script src="landing.js?v=20260803"></script>
   <script src="form.js"></script>
-
 </body>
 </html>
